@@ -7,7 +7,14 @@ class ProImgUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  case Rails.env
+  when 'development'
+      storage :fog
+  when 'production'
+      storage :fog
+  when 'test'
+      storage :file
+  end
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
