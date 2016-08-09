@@ -16,10 +16,12 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'kaminari'
 gem 'acts-as-taggable-on','~> 3.4'
+gem "erb2haml"
+gem "haml-rails"
 
 group :development, :test do
   gem 'byebug'
-  gem "rspec-rails"         #Rails 専用の機能を追加するRSpecのラッパーライブラリ
+  gem "rspec-rails", '~>3.1.0'         #Rails 専用の機能を追加するRSpecのラッパーライブラリ
   gem "factory_girl_rails"  #テストデータを作成する
   gem "faker"               #名前やメールアドレス、その他のプレースホルダなどをダミーデータ生成
 end
@@ -37,10 +39,6 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
-  gem "erb2haml"
-  gem "haml-rails"
-
   gem 'spring'
 end
-
 
